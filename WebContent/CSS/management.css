@@ -1,0 +1,331 @@
+@CHARSET "UTF-8";
+.s1{
+	font-family:Arial;
+	font-size:68px;
+	text-align:center;
+	letter-spacing:1mm;
+	color:#023;
+}
+#link1{
+	text-decoration:none
+}
+#div_mp1{
+	height:170px;
+	width:1300px;
+}
+#div_lr{
+	height:170px;
+	width:466px;
+	margin-left:760px;
+}
+#div_lr2{
+	height:40px;
+	width:426px;
+	padding-top:10px;
+	text-align:right;
+	font-size:17px; 
+	font-family:Arial;
+}
+#b_login{
+	width:56px;
+	height:22px;
+	font-family:Arial;
+	font-size:11px;
+	font-weight:bolder;
+	border:0px;
+	cursor:pointer;
+	background-color:rgba(200,200,100,0.2);
+}
+#b_register{
+	width:56px;
+	height:22px;
+	font-family:Arial;
+	font-size:11px;
+	font-weight:bolder;
+	border:0px;
+	cursor:pointer;
+	background-color:rgba(200,200,100,0.2);
+}
+#div_mp2{
+	height:150px;
+	width:660px;
+	padding-left:100px;
+	text-align:center;
+}
+#div_mp2 a{font-size:80px; color:#7AA}
+#div_mp2 a:hover{color:#9BB}
+#div_mp3{
+	height:30px;
+	width:90px;
+	padding-top:86px;
+	text-align:center;
+}
+#b_task{
+	height:28px;
+	width:65px;
+	font-size:20px; 
+	color:#7AA;
+	background-color:transparent;
+	font-weight:bold;
+	cursor:pointer;	
+	border:0;
+}
+#div_mp4{
+	height:30px;
+	width:120px;
+	padding-top:86px;
+	text-align:center;
+}
+#b_info{
+	height:28px;
+	width:100px;
+	font-size:20px; 
+	color:#7AA;
+	background-color:transparent;
+	font-weight:bold;
+	cursor:pointer;	
+	border:0;
+}
+#div_mp5{
+	height:30px;
+	width:90px;
+	padding-top:86px;
+	text-align:center;
+}
+#b_quit{
+	height:28px;
+	width:58px;
+	font-size:20px; 
+	color:#7AA;
+	background-color:transparent;
+	font-weight:bold;
+	cursor:pointer;	
+	border:0;
+}
+#div_mp6{
+	height:30px;
+	width:90px;
+	padding-top:86px;
+	margin-left:60px;
+}
+#b_home{
+	height:28px;
+	width:66px;
+	font-size:20px; 
+	color:#7AA;
+	background-color:transparent;
+	font-weight:bold;
+	cursor:pointer;	
+	border:0;
+}
+
+
+#div_mb{
+	height:510px;
+	width:700px;
+	margin-left:280px;
+	margin-top:2px;
+	background-color:rgba(100,100,80,0.1);
+}
+#tr1{
+	height:30px;
+	width:700px;
+	margin-top:2px;
+	font-weight:bold;
+}
+#div_mb2{
+	height:476px;
+	width:700px;
+	margin-top:2px;
+}
+#div_mb3{
+	height:26px;
+	width:700px;
+	margin-top:10px;
+	font-family:Arial;
+	font-size:15px;
+	text-align:right;
+}
+#b_delete{
+	width:50px;
+	height:18px;
+	font-family:Arial;
+	font-size:12px;
+	cursor:pointer;	
+	border:0px;
+	background-color:rgba(180,200,180,0.2);
+}
+
+
+#div_mi{
+	height:450px;
+	width:600px;
+	margin-top:10px;
+	margin-left:360px;
+}
+#div_info_p{
+	height:26px;
+	width:360px;
+	margin-left:50px;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold
+}
+#div_mi2{
+	height:320px;
+	width:120px;
+	margin-left:50px;
+	font-family:Arial;
+	font-size:18px;
+	letter-spacing:1px;
+}
+#div_mi3{
+	height:320px;
+	width:400px;
+	margin-left:20px;
+	font-family:Arial;
+	font-size:18px;
+}
+#div_mi4{
+	height:30px;
+	width:400px;
+	margin-top:336px;
+	margin-left:20px;
+	font-family:Arial;
+	font-size:18px;
+}
+
+#uname_info{
+	width:160px;
+	height:28px;
+	border:0;
+	font-family:Arial;
+	font-size:18px;
+	cursor:pointer;	
+	margin-top:9px;
+	padding-left:12px;
+	background-color:rgba(120,130,80,0.1);
+}
+#sex_info1{
+	cursor:pointer;	
+	margin-top:22px;
+}
+#sex_info2{
+	cursor:pointer;	
+	margin-top:22px;
+}
+#year_info{
+	width:55px;
+	height:28px;
+	border:0;
+	font-family:Arial;
+	font-size:18px;
+	cursor:pointer;	
+	margin-top:12px;
+	padding-left:6px;
+	background-color:rgba(120,130,80,0.1);
+}
+#month_info{
+	width:28px;
+	height:28px;
+	border:0;
+	font-family:Arial;
+	font-size:18px;
+	cursor:pointer;	
+	margin-top:12px;
+	padding-left:5px;
+	background-color:rgba(120,130,80,0.1);
+}
+#day_info{
+	width:28px;
+	height:28px;
+	border:0;
+	font-family:Arial;
+	font-size:18px;
+	cursor:pointer;	
+	margin-top:12px;
+	padding-left:5px;
+	background-color:rgba(120,130,80,0.1);
+}
+#email_info{
+	width:160px;
+	height:28px;
+	border:0;
+	font-family:Arial;
+	font-size:18px;
+	cursor:pointer;	
+	margin-top:9px;
+	padding-left:12px;
+	background-color:rgba(120,130,80,0.1);
+}
+#phone_info{
+	width:160px;
+	height:28px;
+	border:0;
+	font-family:Arial;
+	font-size:18px;
+	cursor:pointer;	
+	margin-top:9px;
+	padding-left:12px;
+	background-color:rgba(120,130,80,0.1);
+}
+#money_info{
+	width:160px;
+	height:28px;
+	border:0;
+	font-family:Arial;
+	font-size:18px;
+	cursor:pointer;	
+	margin-top:9px;
+	padding-left:12px;
+	background-color:rgba(120,130,80,0.1);
+}
+#point_info{
+	width:160px;
+	height:28px;
+	border:0;
+	font-family:Arial;
+	font-size:18px;
+	cursor:pointer;	
+	margin-top:9px;
+	padding-left:12px;
+	background-color:rgba(120,130,80,0.1);
+}
+#level_info{
+	width:160px;
+	height:28px;
+	border:0;
+	font-family:Arial;
+	font-size:18px;
+	cursor:pointer;	
+	margin-top:9px;
+	padding-left:12px;
+	background-color:rgba(120,130,80,0.1);
+}
+#setLevel{
+	width:80px;
+	height:24px;
+	font-family:Arial;
+	margin-left:30px;
+	font-size:13px;
+	font-weight:bolder;
+	background-color:rgba(200,200,100,0.2);
+}
+#delete{
+	width:68px;
+	height:24px;
+	font-family:Arial;
+	font-size:13px;
+	margin-left:36px;
+	font-weight:bolder;
+	background-color:rgba(200,200,100,0.2);
+}
+#back{
+	width:68px;
+	height:24px;
+	font-family:Arial;
+	font-size:13px;
+	margin-left:32px;
+	font-weight:bolder;
+	background-color:rgba(200,200,100,0.2);
+}

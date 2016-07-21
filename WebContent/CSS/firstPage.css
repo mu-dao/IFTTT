@@ -1,0 +1,250 @@
+@CHARSET "UTF-8";
+#div3{
+	font-family:Arial;
+	font-size:90px;
+	text-align:center;
+	letter-spacing:1mm;
+	margin-top:80px;
+}
+#div3 a{font-size:80px; color:#111}
+#div3 a:hover{color:#116}
+.s2{
+	font-family:Arial;
+	font-size:36px;
+	text-align:center;
+}
+.s3{
+	font-family:Arial;
+	font-size:36px;
+	text-align:center;
+}
+#div1{
+	height:600px;
+	width:666px;
+	margin-top:10px;
+	margin-left:266px;
+	padding:20px;
+}
+#div2{
+	height:62px;
+	width:500px;
+	margin-top:80px;
+	margin-left:50px;
+	padding-top:60px;
+	padding-left:72px;
+	padding-bottom:5px;
+}
+#button_login{
+	width:180px;
+	height:50px;
+	border:0;
+	color:white;
+	background-color:#4D4D4D;
+	font-family:Arial;
+	font-size:20px;
+	cursor:pointer;	
+}
+#button_register{
+	width:180px;
+	height:50px;
+	border:0;
+	color:white;
+	background-color:#4D4D4D;
+	font-family:Arial;
+	font-size:20px;
+	cursor:pointer;	
+}
+
+
+#div_login1{
+	height:600px;
+	width:600px;
+	margin-top:30px;
+	margin-left:300px;
+	padding:30px;
+}
+#div_login2{
+	height:126px;
+	width:300px;
+	margin-top:60px;
+	margin-left:88px;
+	padding-top:20px;
+	padding-left:110px;
+	padding-bottom:5px;
+}
+#div_login3{
+	height:80px;
+	width:300px;
+	margin-top:20px;
+	margin-left:88px;
+	padding-top:10px;
+	padding-left:80px;
+	padding-bottom:5px;
+}
+#uname_login{
+	width:180px;
+	height:50px;
+	border:0;
+	background-color:#4D4D4D;
+	font-family:Arial;
+	font-size:20px;
+	cursor:pointer;	
+}
+#upass_login{
+	width:180px;
+	height:50px;
+	border:0;
+	background-color:#4D4D4D;
+	font-family:Arial;
+	font-size:20px;
+	cursor:pointer;	
+}
+#submit1{
+	width:62px;
+	height:23px;
+	font-family:Arial;
+	font-size:14px;
+	background-color:rgba(200,200,100,0.2);
+}
+#reset1{
+	width:62px;
+	height:23px;
+	font-family:Arial;
+	font-size:14px;
+	background-color:rgba(200,200,100,0.2);
+}
+#back1{
+	width:62px;
+	height:23px;
+	font-family:Arial;
+	font-size:14px;
+	background-color:rgba(200,200,100,0.2);
+}
+
+
+#div_reg1{
+	height:600px;
+	width:600px;
+	margin-top:30px;
+	margin-left:300px;
+	padding:30px;
+}
+#div_reg2{
+	height:330px;
+	width:360px;
+	margin-top:0px;
+	margin-left:82px;
+	padding-top:0px;
+	padding-left:110px;
+	padding-bottom:5px;
+}
+#div_reg3{
+	height:80px;
+	width:300px;
+	margin-top:10px;
+	margin-left:88px;
+	padding-top:10px;
+	padding-left:80px;
+	padding-bottom:5px;
+}
+#uname_reg{
+	width:200px;
+	height:32px;
+	border:0;
+	color:white;
+	background-color:#4D4D4D;
+	font-family:Arial;
+	font-size:16px;
+	cursor:pointer;	
+}
+#upass_reg{
+	width:200px;
+	height:32px;
+	border:0;
+	color:white;
+	background-color:#4D4D4D;
+	font-family:Arial;
+	font-size:16px;
+	cursor:pointer;	
+}
+#upass2_reg{
+	width:200px;
+	height:32px;
+	border:0;
+	color:white;
+	background-color:#4D4D4D;
+	font-family:Arial;
+	font-size:16px;
+	cursor:pointer;	
+}
+#year_reg{
+	width:76px;
+	height:32px;
+	border:0;
+	color:white;
+	background-color:#4D4D4D;
+	font-family:Arial;
+	font-size:16px;
+	cursor:pointer;	
+}
+#month_reg{
+	width:40px;
+	height:32px;
+	border:0;
+	color:white;
+	background-color:#4D4D4D;
+	font-family:Arial;
+	font-size:16px;
+	cursor:pointer;	
+}
+#day_reg{
+	width:40px;
+	height:32px;
+	border:0;
+	color:white;
+	background-color:#4D4D4D;
+	font-family:Arial;
+	font-size:16px;
+	cursor:pointer;	
+}
+#email_reg{
+	width:200px;
+	height:32px;
+	border:0;
+	color:white;
+	background-color:#4D4D4D;
+	font-family:Arial;
+	font-size:16px;
+	cursor:pointer;	
+}
+#phone_reg{
+	width:200px;
+	height:32px;
+	border:0;
+	color:white;
+	background-color:#4D4D4D;
+	font-family:Arial;
+	font-size:16px;
+	cursor:pointer;	
+}
+#submit2{
+	width:65px;
+	height:23px;
+	font-family:Arial;
+	font-size:14px;
+	background-color:rgba(200,200,100,0.2);
+}
+#reset2{
+	width:62px;
+	height:23px;
+	font-family:Arial;
+	font-size:14px;
+	background-color:rgba(200,200,100,0.2);
+}
+#back2{
+	width:62px;
+	height:23px;
+	font-family:Arial;
+	font-size:14px;
+	background-color:rgba(200,200,100,0.2);
+}
