@@ -314,4 +314,28 @@ public class UserDao {
 		}
 		UserDao.close();
 	}
+
+	public static ResultSet Querry(String sql) throws ClassNotFoundException, SQLException{
+		Class.forName("com.mysql.jdbc.Driver");
+		System.out.println("Driver Loaded");
+		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/IFTTT","root","123456");
+		System.out.println("Database connected");
+		Statement statement = connection.createStatement();
+		ResultSet resultset2 = statement.executeQuery(sql);
+		//connection.close();
+		//UserDao.close();
+		return resultset2;
+	}
+	
+	public static void Update(String sql) throws ClassNotFoundException, SQLException{
+		Class.forName("org.gjt.mm.mysql.Driver"); 
+		Connection connection= DriverManager.getConnection("jdbc:mysql://localhost:3306/IFTTT","root","123456");  
+		Statement  stmt=connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
+		PreparedStatement pstmt=connection.prepareStatement(sql);
+		pstmt.executeUpdate();
+		stmt.close();
+		pstmt.close();
+		connection.close();
+		//UserDao.close();
+	}
 }

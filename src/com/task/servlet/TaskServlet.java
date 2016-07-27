@@ -38,6 +38,8 @@ public class TaskServlet extends HttpServlet {
 		String stop = request.getParameter("stop");
 		String alter = request.getParameter("alter");
 		String delete = request.getParameter("delete");
+		
+		//没有任务被选择运行，返回对应用户页面
 		if(request.getParameter("select_list")==null){
 			request.setAttribute("error", "No task selected!");
 			if(Uname.equals("admin")){
@@ -47,15 +49,18 @@ public class TaskServlet extends HttpServlet {
 				request.getRequestDispatcher("/task2.jsp").forward(request, response);
 			}
 		}
+		
+		
 		String selected = request.getParameter("select_list");
-		int selectedi=Integer.parseInt(selected);
-		int selectedid=0;
+		int selectedi = Integer.parseInt(selected);
+		int selectedid = 0;
 		ArrayList<Task> task = a.getTASK();
-		for(int i = 0;i<task.size();i++){
-			if(task.get(i).gettask_id() == selectedi)
-				selectedid=i;       //任务在队列中的序号
+		for(int i = 0; i < task.size(); i++){
+			if(task.get(i).gettask_id() == selectedi){
+				selectedid = i;//任务在队列中的序号       
+				break;
+			}
 		}
-			
 		
 		if(start != null){
 			if(request.getSession().getAttribute("TaskControl") == null)
@@ -108,8 +113,8 @@ public class TaskServlet extends HttpServlet {
 			System.out.println("task is stopped");
 			task = a.getTASK();
 	  	
-	  		task.get(selectedid).settask_state(2);
-	  		task.get(selectedid).interrupt();
+	  		task.get(selectedid).settask_state(2);//状态设置为暂停
+	  		task.get(selectedid).interrupt();//中断该任务线程
 	  		Task temp = new Task(task.get(selectedid));
 	  		task.set(selectedid, temp);
 	  		String sql="update task set state=2 where id="+selectedi;
@@ -131,7 +136,7 @@ public class TaskServlet extends HttpServlet {
 	  		String username = "";
 	  		try {
 				while(rst.next()){
-					username=rst.getString(3);
+					username=rst.getString(3);//即将被删除的任务属于哪个用户
 				}
 			} catch (SQLException e1) {
 				// TODO Auto-generated catch block
@@ -147,7 +152,7 @@ public class TaskServlet extends HttpServlet {
 					Message message = new Message();
 					message.setFromMember("admin");
 					message.setIsAll("false");
-					message.setToMember(username);
+					message.setToMember(username);//通知该用户，你的任务被删除了
 					message.setTitle("Delete task");
 					message.setContent("You task is deleted by admin");
 					SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -155,7 +160,7 @@ public class TaskServlet extends HttpServlet {
 					UserDao.sendMsg(message);
 					
 			  		task.get(selectedid).settask_state(2);
-			  		task.get(selectedid).interrupt();
+			  		task.get(selectedid).interrupt();//先中断线程
 			  		Task temp = new Task(task.get(selectedid));
 			  		task.set(selectedid, temp);
 			  		String sql="update task set state=2 where id="+selectedi;
@@ -167,7 +172,7 @@ public class TaskServlet extends HttpServlet {
 					}	  		
 			  		a.setTASK(task);
 			  		
-			  		task.remove(selectedid);
+			  		task.remove(selectedid);//删除任务
 			  		System.out.println("task is deleted");
 			  		String sql2="delete from task where id="+selectedi;
 			  		try {
@@ -212,7 +217,7 @@ public class TaskServlet extends HttpServlet {
 			System.out.println("selected task's name is"+a.getTASK().get(selectedid).gettask_name());
 			System.out.println("selected task's state before alter is" + a.getTASK().get(selectedid).gettask_state());
 			if(state != 1){
-				task.remove(selectedid);
+				task.remove(selectedid);//删除掉旧的任务
 				System.out.println("task is deleted and altered");
 				String sql="delete from task where id="+selectedi;
 				try {
@@ -222,7 +227,7 @@ public class TaskServlet extends HttpServlet {
 				e.printStackTrace();
 				}	  		
 				a.setTASK(task);
-					request.getRequestDispatcher("/alterTask.jsp").forward(request, response);
+				request.getRequestDispatcher("/alterTask.jsp").forward(request, response);//然后把修改后的任务重新添加进来
 			}
 			else{  //添加报错信息返回给页面
 				request.setAttribute("error_running", "The task is running!");

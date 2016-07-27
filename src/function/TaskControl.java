@@ -9,19 +9,12 @@ import function_weibo.*;
 
 public class TaskControl {
 	private static ArrayList<Task> TASK = new ArrayList<Task>();            //利用ArrayList实现的线程池，用于对任务进行管理
-	private static int flag=0;
-	/*
-	public static void main(String[] args) throws ClassNotFoundException, SQLException, InterruptedException{
-		Task a = new Task("task",1,1,2,1,"2015-12-25","17:47:50","669279048@qq.com","huanga9526,","listen Weibo","listen Password","listen","weibo account","seibo password","wb","669279048@qq.com","669279048","huanga9526,","liwenamo1@163.com","HAHAHAH","1","2.00X1jziF0WbfZTba0b8c1c0bxj179C");
-		//Task a = new Task("task",1,1,2,1,"2015-12-25","17:47:50","669279048@qq.com","huanga9526,","listen Weibo","listen Password","listen","weibo account","seibo password","wb","669279048@qq.com","669279048","huanga9526,","liwenamo1@163.com","HAHAHAH","1","2.00X1jziF0WbfZTba0b8c1c0bxj179C");
-		a.run();
-		//TaskControl b =new TaskControl();
-		//a.CreateTask("ha","67",4,1,1,1,"2015-12-10","17:16:00","669279048@qq.com","huanga9526,","listen Weibo","listen Password","listen","weibo account","weibo password","wb","669279048@qq.com","669279048","huanga9526,","liwenamo1@163.com","HAHAHAH","Theme","null","null",1," ","0");
-	}
-	*/
-	public void start(int i){ //使线程池中的第i个任务开始执行
+	private static int flag = 0;
+
+	//使线程池中的第i个任务开始执行
+	public void run(int i){
 		System.out.println("start:"+ i);
-		TASK.get(i).start();
+		TASK.get(i).run();
 		System.out.println("start_second");
 	}
 	
@@ -38,26 +31,27 @@ public class TaskControl {
 		TASK = task;
 	}
 	
+	//所有信息存入数据库中，除了used 和 info 其余数据用来创建task,同时将新建的任务运行起来。最后修改数据库中的经验值和剩余金额
 	public void CreateTask(String Uname,String Tname,int ID,int State,int THIS,int THAT,String Date,String Time,
 		    String RCV_Mail,String RCV_PW,String Frm_Sina,String Frm_PW,String SinaText,String To_Sina,
             String To_PW,String Weibo_Content,String Send_Mail,String Mail_User,String Send_PW,String To_Mail,String Content,String Subject,
-            String Info,String WaitTime) throws ClassNotFoundException, SQLException{		//所有信息存入数据库中，除了used 和 info 其余数据用来创建task,同时将新建的任务运行起来。最后修改数据库中的经验值和剩余金额
-		
+            String Info,String WaitTime) throws ClassNotFoundException, SQLException{
 		
 		String accessToken = "accessToken";
+		//任务和微博相关，取accessToken
 		if(THIS == 3 || THIS == 4 || THAT == 2){
 			accessToken = Auth_token.getAccessToken().getAccessToken(); //a.getAccessToken()返回的是accessToken类，类中也有getAccessToken()函数返回String类的token码
 			System.out.println("got accessToken, it is : "+ accessToken);
 		}
 		
-		
+		//查找task表中最大的ID
 		ResultSet rst = UserDao.Querry("select MAX(ID) from task");
 		int num = 0;
 		while(rst.next()){
-			if(rst.getString(1)!=null)
+			if(rst.getString(1) != null)
 				num = Integer.parseInt(rst.getString(1));
 		}
-		int id = num+1;
+		int id = num + 1;
 		ArrayList<Task> task = getTASK();
 		task.add(new Task(Tname,id,State,THIS,THAT,Date,Time,RCV_Mail,RCV_PW,Frm_Sina,Frm_PW,SinaText,To_Sina,To_PW,Weibo_Content,Send_Mail,Mail_User,Send_PW,To_Mail,Content,Subject,WaitTime,accessToken));
 		int i = task.size();
@@ -77,23 +71,14 @@ public class TaskControl {
 		}
 	}
 	
-	
-	/*public static void main(String[] args) throws ClassNotFoundException, SQLException, InterruptedException{
-		//Thread B = new Thread(new Task("GD",4,1,2,1,"2015-12-3","10:41:50","669279048@qq.com","huanga9526,","listen Weibo","listen Password","listen","weibo account","seibo password","wb","669279048@qq.com","669279048","huanga9526,","liwenamo1@163.com","HAHAHAH","Theme","null","null"));
-		//B.start();
-		TaskControl a =new TaskControl();
-		//a.CreateTask("ha","67",4,1,1,1,"2015-12-10","17:16:00","669279048@qq.com","huanga9526,","listen Weibo","listen Password","listen","weibo account","weibo password","wb","669279048@qq.com","669279048","huanga9526,","liwenamo1@163.com","HAHAHAH","Theme","null","null",1," ","0");
-	}*/
-	
 	public void Update() throws NumberFormatException, SQLException, ClassNotFoundException{
-		System.out.println("flag is "+getFLAG());
-		if(getFLAG()==0){
-			//TASK = new ArrayList();            //任务数组，用于对任务进行管理
+		System.out.println("flag is " + getFLAG());
+		if(getFLAG() == 0){
 			System.out.println(" first");
-			String sql="select * from task";
+			String sql = "select * from task";
 			ResultSet rst = UserDao.Querry(sql);
 			ArrayList<Task> task = getTASK();
-			int i=0;
+			int i = 0;
 			while(rst.next()){
 				task.add(new Task(rst.getString(2),Integer.parseInt(rst.getString(1)),2,Integer.parseInt(rst.getString(5)),Integer.parseInt(rst.getString(6)),rst.getString(7),rst.getString(8),rst.getString(9),rst.getString(10),rst.getString(11),rst.getString(12),rst.getString(13),rst.getString(14),rst.getString(15), rst.getString(16), rst.getString(17),rst.getString(18), rst.getString(19), rst.getString(20), rst.getString(21), rst.getString(22),/*rst.getString(23),rst.getString(24),*/rst.getString(24),rst.getString(25)));
 				/*状态全部设成暂停态*/
@@ -106,7 +91,4 @@ public class TaskControl {
 			setFLAG(2);
 		}
 	}
-	
-	
-
 }

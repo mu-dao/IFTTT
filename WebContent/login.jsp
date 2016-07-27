@@ -48,14 +48,13 @@ function login(){
    	 		onblur="if(this.value==''){this.value=defaultValue; this.style.color='grey';}"><br><br>
 			<input type="text" name="upass" id="upass_login" value="Password" style="color:grey; text-align:center"
 			onfocus="if(this.value==defaultValue) {this.value=''; this.type='password'; this.style.color='white';}"
-   	 	 	onblur="if(!this.value) {this.value=defaultValue; this.type='text'; this.style.color='grey';}">
+   	 		onblur="if(!this.value) {this.value=defaultValue; this.type='text'; this.style.color='grey';}">
    	 	 	<p><font color=red>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${requestScope.error1}${requestScope.error2}</font></p>
-   	 	 </div>
-   	 	 	<div id="div_login3">
+   	    </div>
+   	    <div id="div_login3">
    	 	 		<input type="submit" id="submit1" value="Login" class='btn'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<input type="reset" id="reset1" value="Reset" class='btn'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<input type="button" id="back1" onClick="location.href='index.jsp'" value="Back" class='btn'>
-   	 	 	
 		</div>
 	</div>
 </form>

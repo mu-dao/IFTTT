@@ -34,7 +34,6 @@ public class SendMail {
 	    	Session session = Session.getInstance(props, new Authenticator() {
 	    		@Override
 		    	protected PasswordAuthentication getPasswordAuthentication() {
-		    		System.out.println("inside session");
 		    		return new PasswordAuthentication(username, password);
 		        }
 		    });

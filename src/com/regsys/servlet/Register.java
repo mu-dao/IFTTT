@@ -22,7 +22,7 @@ public class Register extends HttpServlet {
 		User userCheck = UserDao.Login(request.getParameter("uname"));//尝试使用uname查找数据库，如果返回用户名和密码，说明用户已存在
 		if(userCheck != null){
 			request.setAttribute("error1", "The username exists!");
-			request.getRequestDispatcher("/register.jsp").forward(request, response);	
+			request.getRequestDispatcher("/register.jsp").forward(request, response);
 		}
 		
 		User user = new User();
